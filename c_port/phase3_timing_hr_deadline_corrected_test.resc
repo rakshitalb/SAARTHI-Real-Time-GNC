@@ -1,0 +1,6 @@
+
+using sysbus
+mach create "GNC_Phase3_Deadline_Corrected_Test"
+machine LoadPlatformDescription @platforms/boards/stm32f4_discovery-kit.repl
+cpu PerformanceInMips 125
+sysbus LoadELF @C:/Users/DELL/Week4_GNC_Renode/c_port/phase3_timing_hr_deadline_corrected_test.elf

@@ -1,0 +1,6 @@
+
+using sysbus
+mach create "GNC_Phase3_Timing"
+machine LoadPlatformDescription @platforms/boards/stm32f4_discovery-kit.repl
+cpu PerformanceInMips 125
+sysbus LoadELF @C:/Users/DELL/Week4_GNC_Renode/c_port/phase3_timing.elf

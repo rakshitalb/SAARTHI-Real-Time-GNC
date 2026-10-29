@@ -2,7 +2,7 @@
 #define FREERTOS_CONFIG_H
 
 /* CPU / RTOS timing */
-#define configCPU_CLOCK_HZ              (125000000UL)
+#define configCPU_CLOCK_HZ              (72000000UL)
 #define configTICK_RATE_HZ              (1000U)
 #define configTICK_TYPE_WIDTH_IN_BITS   TICK_TYPE_WIDTH_32_BITS
 
@@ -50,6 +50,7 @@
 
 /* API functions required by our application */
 #define INCLUDE_vTaskDelay                1
+#define INCLUDE_xTaskDelayUntil           1
 #define INCLUDE_xTaskGetSchedulerState    1
 
 #endif
