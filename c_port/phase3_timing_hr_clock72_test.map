@@ -1,0 +1,362 @@
+Archive member included to satisfy reference by file (symbol)
+
+D:/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7e-m/nofp\libgcc.a(_arm_muldf3.o)
+                              control.o (__aeabi_dmul)
+D:/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7e-m/nofp\libgcc.a(_arm_addsubdf3.o)
+                              control.o (__aeabi_dsub)
+D:/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7e-m/nofp\libgcc.a(_arm_cmpdf2.o)
+                              control.o (__aeabi_dcmplt)
+
+There are no discarded input sections
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x08000000         0x00100000         xr
+RAM              0x20000000         0x00020000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD startup_rtos.o
+LOAD phase3_timing_hr_clock72.o
+LOAD phase3_tasks_clock72.o
+LOAD phase3_port_clock72_softfp.o
+LOAD control.o
+LOAD list.o
+LOAD queue.o
+LOAD rtos_lib.o
+START GROUP
+LOAD D:/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7e-m/nofp\libgcc.a
+LOAD D:/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libg.a
+LOAD D:/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a
+END GROUP
+
+.isr_vector     0x08000000       0x40
+                0x08000000                        . = ALIGN (0x4)
+ *(.isr_vector)
+ .isr_vector    0x08000000       0x40 startup_rtos.o
+                0x08000000                vector_table_rtos
+                0x08000040                        . = ALIGN (0x4)
+
+.text           0x08000040     0x5010
+                0x08000040                        . = ALIGN (0x4)
+ *(.text*)
+ .text          0x08000040       0x64 startup_rtos.o
+                0x08000040                Reset_Handler
+                0x0800009c                Default_Handler_Rtos
+ .text          0x080000a4      0x79c phase3_timing_hr_clock72.o
+                0x08000104                vApplicationGetIdleTaskMemory
+                0x08000134                vApplicationStackOverflowHook
+                0x08000790                main
+ .text          0x08000840     0x254c phase3_tasks_clock72.o
+                0x080008f4                xTaskCreateStatic
+                0x08000ba8                xTaskPeriodicDelay
+                0x08000c7c                xTaskDelayUntil
+                0x08000d78                vTaskDelay
+                0x08000ecc                vTaskStartScheduler
+                0x08000f48                vTaskEndScheduler
+                0x08000f78                vTaskSuspendAll
+                0x08000f94                xTaskResumeAll
+                0x080011a4                xTaskGetTickCount
+                0x080011c0                xTaskGetTickCountFromISR
+                0x080011e4                uxTaskGetNumberOfTasks
+                0x080011f8                pcTaskGetName
+                0x08001240                xTaskGetStaticBuffers
+                0x080012d4                xTaskCatchUpTicks
+                0x0800132c                xTaskIncrementTick
+                0x0800155c                vTaskSwitchContext
+                0x08001670                vTaskPlaceOnEventList
+                0x080016b8                vTaskPlaceOnUnorderedEventList
+                0x08001764                xTaskRemoveFromEventList
+                0x08001914                vTaskRemoveFromUnorderedEventList
+                0x08001a98                vTaskSetTimeOutState
+                0x08001ae4                vTaskInternalSetTimeOutState
+                0x08001b10                xTaskCheckForTimeOut
+                0x08001bcc                vTaskMissedYield
+                0x08001cc0                xTaskGetCurrentTaskHandle
+                0x08001cdc                xTaskGetCurrentTaskHandleForCore
+                0x08001d0c                xTaskGetSchedulerState
+                0x08001d48                xTaskPriorityInherit
+                0x08001e88                xTaskPriorityDisinherit
+                0x08001fd4                vTaskPriorityDisinheritAfterTimeout
+                0x08002148                uxTaskResetEventItemValue
+                0x08002178                pvTaskIncrementMutexHeldCount
+                0x080021a4                ulTaskGenericNotifyTake
+                0x080022b0                xTaskGenericNotifyWait
+                0x080023f0                xTaskGenericNotify
+                0x08002648                xTaskGenericNotifyFromISR
+                0x08002910                vTaskGenericNotifyGiveFromISR
+                0x08002b24                xTaskGenericNotifyStateClear
+                0x08002bb4                ulTaskGenericNotifyValueClear
+                0x08002cf8                vTaskResetState
+ .text          0x08002d8c      0x52c phase3_port_clock72_softfp.o
+                0x08002d8c                pxPortInitialiseStack
+                0x08002e4c                vPortSVCHandler
+                0x08002e96                xPortStartScheduler
+                0x08003068                vPortEndScheduler
+                0x0800309c                vPortEnterCritical
+                0x080030fc                vPortExitCritical
+                0x0800314c                xPortPendSVHandler
+                0x080031aa                xPortSysTickHandler
+                0x080031f0                vPortSetupTimerInterrupt
+                0x0800323a                vPortValidateInterruptPriority
+ .text          0x080032b8      0x118 control.o
+                0x080032b8                limit_torque
+                0x08003318                pd_controller
+ .text          0x080033d0      0x15e list.o
+                0x080033d0                vListInitialise
+                0x0800340e                vListInitialiseItem
+                0x08003426                vListInsertEnd
+                0x0800346c                vListInsert
+                0x080034dc                uxListRemove
+ *fill*         0x0800352e        0x2 
+ .text          0x08003530     0x1374 queue.o
+                0x08003530                xQueueGenericReset
+                0x08003650                xQueueGenericCreateStatic
+                0x08003704                xQueueGenericGetStaticBuffers
+                0x080037e2                xQueueCreateMutexStatic
+                0x08003818                xQueueCreateCountingSemaphoreStatic
+                0x0800387c                xQueueGenericSend
+                0x08003a78                xQueueGenericSendFromISR
+                0x08003bcc                xQueueGiveFromISR
+                0x08003d0e                xQueueReceive
+                0x08003ecc                xQueueSemaphoreTake
+                0x080040c8                xQueuePeek
+                0x08004274                xQueueReceiveFromISR
+                0x080043a2                xQueuePeekFromISR
+                0x0800446e                uxQueueMessagesWaiting
+                0x080044aa                uxQueueSpacesAvailable
+                0x080044f0                uxQueueMessagesWaitingFromISR
+                0x0800452a                vQueueDelete
+                0x08004598                uxQueueGetQueueItemSize
+                0x080045ae                uxQueueGetQueueLength
+                0x080047e2                xQueueIsQueueEmptyFromISR
+                0x08004858                xQueueIsQueueFullFromISR
+ .text          0x080048a4       0x70 rtos_lib.o
+                0x080048a4                memset
+                0x080048d8                memcpy
+ .text          0x08004914      0x254 D:/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7e-m/nofp\libgcc.a(_arm_muldf3.o)
+                0x08004914                __muldf3
+                0x08004914                __aeabi_dmul
+ .text          0x08004b68      0x378 D:/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7e-m/nofp\libgcc.a(_arm_addsubdf3.o)
+                0x08004b68                __aeabi_drsub
+                0x08004b70                __aeabi_dsub
+                0x08004b70                __subdf3
+                0x08004b74                __aeabi_dadd
+                0x08004b74                __adddf3
+                0x08004dec                __floatunsidf
+                0x08004dec                __aeabi_ui2d
+                0x08004e0c                __floatsidf
+                0x08004e0c                __aeabi_i2d
+                0x08004e30                __aeabi_f2d
+                0x08004e30                __extendsfdf2
+                0x08004e74                __floatundidf
+                0x08004e74                __aeabi_ul2d
+                0x08004e84                __floatdidf
+                0x08004e84                __aeabi_l2d
+ .text          0x08004ee0      0x110 D:/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7e-m/nofp\libgcc.a(_arm_cmpdf2.o)
+                0x08004ee0                __gtdf2
+                0x08004ee0                __gedf2
+                0x08004ee8                __ltdf2
+                0x08004ee8                __ledf2
+                0x08004ef0                __nedf2
+                0x08004ef0                __eqdf2
+                0x08004ef0                __cmpdf2
+                0x08004f6c                __aeabi_cdrcmple
+                0x08004f7c                __aeabi_cdcmpeq
+                0x08004f7c                __aeabi_cdcmple
+                0x08004f8c                __aeabi_dcmpeq
+                0x08004fa0                __aeabi_dcmplt
+                0x08004fb4                __aeabi_dcmple
+                0x08004fc8                __aeabi_dcmpge
+                0x08004fdc                __aeabi_dcmpgt
+ *(.rodata*)
+ .rodata        0x08004ff0       0x4e phase3_timing_hr_clock72.o
+ *fill*         0x0800503e        0x2 
+ .rodata        0x08005040        0x9 phase3_tasks_clock72.o
+ *fill*         0x08005049        0x3 
+ .rodata        0x0800504c        0x4 phase3_port_clock72_softfp.o
+                0x08005050                        . = ALIGN (0x4)
+
+.glue_7         0x08005050        0x0
+ .glue_7        0x08005050        0x0 linker stubs
+
+.glue_7t        0x08005050        0x0
+ .glue_7t       0x08005050        0x0 linker stubs
+
+.vfp11_veneer   0x08005050        0x0
+ .vfp11_veneer  0x08005050        0x0 linker stubs
+
+.v4_bx          0x08005050        0x0
+ .v4_bx         0x08005050        0x0 linker stubs
+
+.iplt           0x08005050        0x0
+ .iplt          0x08005050        0x0 startup_rtos.o
+
+.rel.dyn        0x08005050        0x0
+ .rel.iplt      0x08005050        0x0 startup_rtos.o
+
+.data           0x20000000       0xd4 load address 0x08005050
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _sdata = .
+ *(.data*)
+ .data          0x20000000        0x0 startup_rtos.o
+ .data          0x20000000       0xd0 phase3_timing_hr_clock72.o
+                0x20000000                gnc_timing
+                0x20000034                sensing_timing
+                0x20000068                communications_timing
+                0x2000009c                telemetry_timing
+ .data          0x200000d0        0x0 phase3_tasks_clock72.o
+ .data          0x200000d0        0x4 phase3_port_clock72_softfp.o
+ .data          0x200000d4        0x0 control.o
+ .data          0x200000d4        0x0 list.o
+ .data          0x200000d4        0x0 queue.o
+ .data          0x200000d4        0x0 rtos_lib.o
+ .data          0x200000d4        0x0 D:/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7e-m/nofp\libgcc.a(_arm_muldf3.o)
+ .data          0x200000d4        0x0 D:/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7e-m/nofp\libgcc.a(_arm_addsubdf3.o)
+ .data          0x200000d4        0x0 D:/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7e-m/nofp\libgcc.a(_arm_cmpdf2.o)
+                0x200000d4                        . = ALIGN (0x4)
+                0x200000d4                        _edata = .
+                0x08005050                        _sidata = LOADADDR (.data)
+
+.igot.plt       0x200000d4        0x0 load address 0x08005124
+ .igot.plt      0x200000d4        0x0 startup_rtos.o
+
+.bss            0x200000d8     0x3cc0 load address 0x08005124
+                0x200000d8                        . = ALIGN (0x4)
+                0x200000d8                        _sbss = .
+ *(.bss*)
+ .bss           0x200000d8        0x0 startup_rtos.o
+ .bss           0x200000d8     0x3be0 phase3_timing_hr_clock72.o
+                0x200000d8                gnc_count
+                0x200000dc                sensing_count
+                0x200000e0                communications_count
+                0x200000e4                communications_last_timestamp
+                0x200000e8                communications_last_status
+                0x200000ec                monitoring_count
+                0x200000f0                gnc_telemetry
+                0x20000110                gnc_activation_trace
+                0x20000510                gnc_execution_trace
+                0x20000910                gnc_timer_execution_trace
+                0x20000d10                sensing_activation_trace
+                0x20001110                sensing_execution_trace
+                0x20001510                sensing_timer_execution_trace
+                0x20001910                communications_activation_trace
+                0x20001d10                communications_execution_trace
+                0x20002110                communications_timer_execution_trace
+                0x20002510                telemetry_activation_trace
+                0x20002910                telemetry_execution_trace
+                0x20002d10                telemetry_timer_execution_trace
+                0x20003110                phase3_measurement_count
+ .bss           0x20003cb8       0xd8 phase3_tasks_clock72.o
+                0x20003cb8                pxCurrentTCB
+ .bss           0x20003d90        0x8 phase3_port_clock72_softfp.o
+ .bss           0x20003d98        0x0 control.o
+ .bss           0x20003d98        0x0 list.o
+ .bss           0x20003d98        0x0 queue.o
+ .bss           0x20003d98        0x0 rtos_lib.o
+ .bss           0x20003d98        0x0 D:/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7e-m/nofp\libgcc.a(_arm_muldf3.o)
+ .bss           0x20003d98        0x0 D:/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7e-m/nofp\libgcc.a(_arm_addsubdf3.o)
+ .bss           0x20003d98        0x0 D:/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7e-m/nofp\libgcc.a(_arm_cmpdf2.o)
+ *(COMMON)
+                0x20003d98                        . = ALIGN (0x4)
+                0x20003d98                        _ebss = .
+                0x20003d98                        . = ALIGN (0x8)
+                0x20003d98                        _end = .
+                0x20020000                        _estack = (ORIGIN (RAM) + LENGTH (RAM))
+OUTPUT(phase3_timing_hr_clock72_test.elf elf32-littlearm)
+LOAD linker stubs
+
+.comment        0x00000000       0x46
+ .comment       0x00000000       0x46 startup_rtos.o
+                                 0x47 (size before relaxing)
+ .comment       0x00000046        0x0 phase3_timing_hr_clock72.o
+                                 0x47 (size before relaxing)
+ .comment       0x00000046        0x0 phase3_tasks_clock72.o
+                                 0x47 (size before relaxing)
+ .comment       0x00000046        0x0 phase3_port_clock72_softfp.o
+                                 0x47 (size before relaxing)
+ .comment       0x00000046        0x0 control.o
+                                 0x47 (size before relaxing)
+ .comment       0x00000046        0x0 list.o
+                                 0x47 (size before relaxing)
+ .comment       0x00000046        0x0 queue.o
+                                 0x47 (size before relaxing)
+ .comment       0x00000046        0x0 rtos_lib.o
+                                 0x47 (size before relaxing)
+
+.ARM.attributes
+                0x00000000       0x32
+ .ARM.attributes
+                0x00000000       0x2e startup_rtos.o
+ .ARM.attributes
+                0x0000002e       0x2e phase3_timing_hr_clock72.o
+ .ARM.attributes
+                0x0000005c       0x2e phase3_tasks_clock72.o
+ .ARM.attributes
+                0x0000008a       0x32 phase3_port_clock72_softfp.o
+ .ARM.attributes
+                0x000000bc       0x2e control.o
+ .ARM.attributes
+                0x000000ea       0x2e list.o
+ .ARM.attributes
+                0x00000118       0x2e queue.o
+ .ARM.attributes
+                0x00000146       0x2e rtos_lib.o
+ .ARM.attributes
+                0x00000174       0x1e D:/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7e-m/nofp\libgcc.a(_arm_muldf3.o)
+ .ARM.attributes
+                0x00000192       0x1e D:/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7e-m/nofp\libgcc.a(_arm_addsubdf3.o)
+ .ARM.attributes
+                0x000001b0       0x1e D:/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7e-m/nofp\libgcc.a(_arm_cmpdf2.o)
+
+.debug_info     0x00000000     0x3300
+ .debug_info    0x00000000      0xc7b phase3_timing_hr_clock72.o
+ .debug_info    0x00000c7b     0x2133 phase3_tasks_clock72.o
+ .debug_info    0x00002dae      0x552 phase3_port_clock72_softfp.o
+
+.debug_abbrev   0x00000000      0x883
+ .debug_abbrev  0x00000000      0x304 phase3_timing_hr_clock72.o
+ .debug_abbrev  0x00000304      0x346 phase3_tasks_clock72.o
+ .debug_abbrev  0x0000064a      0x239 phase3_port_clock72_softfp.o
+
+.debug_aranges  0x00000000       0x60
+ .debug_aranges
+                0x00000000       0x20 phase3_timing_hr_clock72.o
+ .debug_aranges
+                0x00000020       0x20 phase3_tasks_clock72.o
+ .debug_aranges
+                0x00000040       0x20 phase3_port_clock72_softfp.o
+
+.debug_line     0x00000000     0x1997
+ .debug_line    0x00000000      0x4d9 phase3_timing_hr_clock72.o
+ .debug_line    0x000004d9     0x1129 phase3_tasks_clock72.o
+ .debug_line    0x00001602      0x395 phase3_port_clock72_softfp.o
+
+.debug_str      0x00000000     0x16e3
+ .debug_str     0x00000000     0x16e3 phase3_timing_hr_clock72.o
+                                0x8bb (size before relaxing)
+ .debug_str     0x000016e3        0x0 phase3_tasks_clock72.o
+                               0x1007 (size before relaxing)
+ .debug_str     0x000016e3        0x0 phase3_port_clock72_softfp.o
+                                0x42c (size before relaxing)
+
+.debug_frame    0x00000000      0xbec
+ .debug_frame   0x00000000      0x188 phase3_timing_hr_clock72.o
+ .debug_frame   0x00000188      0x71c phase3_tasks_clock72.o
+ .debug_frame   0x000008a4      0x1a8 phase3_port_clock72_softfp.o
+ .debug_frame   0x00000a4c       0x30 D:/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7e-m/nofp\libgcc.a(_arm_muldf3.o)
+ .debug_frame   0x00000a7c       0xac D:/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7e-m/nofp\libgcc.a(_arm_addsubdf3.o)
+ .debug_frame   0x00000b28       0xc4 D:/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7e-m/nofp\libgcc.a(_arm_cmpdf2.o)
+
+.debug_line_str
+                0x00000000       0xe9
+ .debug_line_str
+                0x00000000       0xe9 D:/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7e-m/nofp\libgcc.a(_arm_muldf3.o)
+ .debug_line_str
+                0x000000e9        0x0 D:/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7e-m/nofp\libgcc.a(_arm_addsubdf3.o)
+                                 0xe9 (size before relaxing)
+ .debug_line_str
+                0x000000e9        0x0 D:/Arm/GNU Toolchain mingw-w64-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7e-m/nofp\libgcc.a(_arm_cmpdf2.o)
+                                 0xe9 (size before relaxing)
