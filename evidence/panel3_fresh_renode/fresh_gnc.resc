@@ -1,0 +1,8 @@
+using sysbus
+
+mach create "GNC_RTOS"
+machine LoadPlatformDescription @C:\PROGRA~1\Renode\platforms\boards\stm32f4_discovery-kit.repl
+
+cpu PerformanceInMips 125
+
+sysbus LoadELF @C:\Users\DELL\Week4_GNC_Renode\c_port\fresh_rebuild\fresh_gnc.elf

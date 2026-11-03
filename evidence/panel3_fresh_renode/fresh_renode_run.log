@@ -1,0 +1,8 @@
+[14:50:04.7881]  [INFO] cpu: Guessing VectorTableOffset value to be 0x8000000.
+[14:50:04.8013]  [INFO] cpu: Setting initial values: PC = 0x8003551, SP = 0x20020000.
+[14:50:04.8051]  [INFO] GNC_RTOS: Machine started.
+[14:50:04.8720]  [WARNING] nvic: Trying to set the priority for interrupt 16 to 0xFF, but it should be maskable with 0xF0
+[14:50:04.8729]  [WARNING] nvic: Trying to set the priority for interrupt PendSV to 0xFF, but it should be maskable with 0xF0
+[14:50:04.8730]  [WARNING] nvic: Trying to set the priority for interrupt SysTick to 0xFF, but it should be maskable with 0xF0
+[14:50:12.4432]  [INFO] GNC_RTOS: Machine paused.
+[14:50:43.7507]  [INFO] GNC_RTOS: Disposed.
